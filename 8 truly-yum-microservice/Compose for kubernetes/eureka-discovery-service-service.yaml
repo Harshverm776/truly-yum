@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose-windows-amd64.exe convert
+    kompose.version: 1.21.0 (992df58d8)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: eureka-discovery-service
+  name: eureka-discovery-service
+spec:
+  type: LoadBalancer
+  ports:
+  - name: "8761"
+    port: 8761
+    targetPort: 8761
+  selector:
+    io.kompose.service: eureka-discovery-service
+status:
+  loadBalancer: {}

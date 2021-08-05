@@ -1,0 +1,122 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<bean
+		class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+
+	<bean id="dateFormat" class="java.text.SimpleDateFormat">
+		<constructor-arg value="dd/MM/yyyy" />
+	</bean>
+
+	<bean id="sandwich" class="com.ct.truyum.model.MenuItem">
+		<property name="id" value="1" />
+		<property name="name" value="Sandwich" />
+		<property name="price" value="99.00f" />
+		<property name="active" value="true" />
+		<property name="dateOfLaunch">
+			<bean factory-bean="dateFormat" factory-method="parse">
+				<constructor-arg value="15/03/2017" />
+			</bean>
+		</property>
+
+		<property name="category" value="Main course" />
+		<property name="freeDelivery" value="true" />
+	</bean>
+
+	<bean id="burger" class="com.ct.truyum.model.MenuItem">
+		<property name="id" value="2" />
+		<property name="name" value="Veg Burger" />
+		<property name="price" value="129.00f" />
+		<property name="active" value="true" />
+		<property name="dateOfLaunch">
+			<bean factory-bean="dateFormat" factory-method="parse">
+				<constructor-arg value="23/12/2018" />
+			</bean>
+		</property>
+		<property name="category" value="Main course" />
+		<property name="freeDelivery" value="true" />
+	</bean>
+
+	<bean id="pizza" class="com.ct.truyum.model.MenuItem">
+		<property name="id" value="3" />
+		<property name="name" value="Pizza" />
+		<property name="price" value="149.00f" />
+		<property name="active" value="true" />
+		<property name="dateOfLaunch">
+			<bean factory-bean="dateFormat" factory-method="parse">
+				<constructor-arg value="02/07/2017" />
+			</bean>
+		</property>
+		<property name="category" value="Main course" />
+		<property name="freeDelivery" value="true" />
+	</bean>
+	<bean id="fries" class="com.ct.truyum.model.MenuItem">
+		<property name="id" value="4" />
+		<property name="name" value="French Fries" />
+		<property name="price" value="200.00f" />
+		<property name="active" value="false" />
+		<property name="dateOfLaunch">
+			<bean factory-bean="dateFormat" factory-method="parse">
+				<constructor-arg value="21/08/2018" />
+			</bean>
+		</property>
+		<property name="category" value="Desserts" />
+		<property name="freeDelivery" value="false" />
+	</bean>
+	<bean id="brownie" class="com.ct.truyum.model.MenuItem">
+		<property name="id" value="000005" />
+		<property name="name" value="Brownie" />
+		<property name="price" value="200.00f" />
+		<property name="active" value="true" />
+		<property name="dateOfLaunch">
+			<bean factory-bean="dateFormat" factory-method="parse">
+				<constructor-arg value="12/05/2020" />
+			</bean>
+		</property>
+		<property name="category" value="Desserts" />
+		<property name="freeDelivery" value="false" />
+	</bean>
+
+	<bean id="menutItemDaoCollectionImpl"
+		class="com.ct.truyum.dao.MenuItemDaoCollectionImpl">
+		<property name="menuItemList">
+			<list>
+				<ref bean="sandwich" />
+				<ref bean="burger" />
+				<ref bean="pizza" />
+				<ref bean="fries" />
+				<ref bean="brownie" />
+			</list>
+		</property>
+
+
+	</bean>
+	<bean id="cart" class="com.ct.truyum.model.Cart">
+
+
+	</bean>
+	<bean id="cartDaoCollectionImpl"
+		class="com.ct.truyum.dao.CartDaoCollectionImpl">
+		<property name="userCarts">
+			<map>
+				<entry key="1" value-ref="cart" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="menutItemService"
+		class="com.ct.truyum.service.MenuItemService">
+
+
+
+	</bean>
+
+	<bean id="cartService"
+		class="com.ct.truyum.service.CartService">
+
+
+
+	</bean>
+
+</beans>

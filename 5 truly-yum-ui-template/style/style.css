@@ -1,0 +1,66 @@
+.navbar {
+    background-color: #ff6347;
+    color: white;
+}
+
+.material-icons {
+    vertical-align: middle;
+}
+
+.local-shipping {
+    color: darkblue;
+}
+
+.add-shopping-cart {
+    background-color: #ff6347;
+    color: white;
+}
+
+.edit {
+    background-color: #ff6347;
+    color: white;
+}
+
+.headimag {
+    width: 100%;
+    height: 300px;
+}
+
+div#form-box {
+    margin-top: -220px;
+}
+
+.free-breakfast {
+    background-color: rgb(218, 216, 216);
+    padding: 7px;
+}
+
+.save {
+    background-color: #ff6347;
+    color: white;
+}
+
+.status {
+    color: red;
+}
+
+.price {
+    color: red;
+}
+
+.delete-forever {
+    color: gray;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #ff6347;
+    color: white;
+}
+
+footer span {
+    margin-top: 15px;
+    margin-left: 10px;
+}

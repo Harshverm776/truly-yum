@@ -1,0 +1,82 @@
+html {
+    font: Arial;
+}
+body {
+    margin: 0px;
+}
+header {
+    background-color: #305496;
+    color: #ffffff;
+    padding: 10px;
+}
+header h1 {
+    float: left;
+    margin: 0px;
+}
+header img {
+    margin-left: 10px;
+}
+nav {
+    float: right;
+    margin-top: 7px;
+}
+header nav a{
+    color: #ffffff;
+    padding: 10px;
+}
+#content {
+    text-align: center;
+}
+h3 {
+    color: #1eb778;
+}
+h4 {
+    color: #bfbfbf;
+}
+table {
+    margin: 0px auto;
+}
+table th, table td {
+    padding: 15px;
+}
+form {
+    width: 60%;
+    margin: 0px auto;
+    text-align: left;
+}
+form label {
+    color: #696969;
+    font-weight: bold;
+}
+#name, #price, #date-of-launch, #category, form label {
+    width: 80%;
+    margin: 10px 5px 10px 0px;
+    padding: 5px;
+}
+#active {
+    margin: 10px 5px 10px 0px;
+}
+form .column {
+    float: left;
+    width: 25%;
+  }
+form .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+form button {
+    background-color: #305496;
+    color: #ffffff;
+    margin-top: 15px;
+    padding: 15px 50px 15px 50px;
+    font-weight: bold;
+    border: hidden;
+}
+footer {
+    background-color: #bfbfbf;
+    position : absolute;
+    bottom : 0;
+    width: 100%;
+    height: 50px;
+}

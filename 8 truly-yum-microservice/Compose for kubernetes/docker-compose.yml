@@ -1,0 +1,38 @@
+version: '3.7'
+services:
+
+  eureka-discovery-service:
+    image: eureka-discovery-server:0.0.1-SNAPSHOT
+    ports:
+      - "8761:8761"
+    restart: always
+    networks:
+      - truyum-network
+
+  menuitem-service:
+    image: menuitem-service:0.0.1-SNAPSHOT
+    ports:
+     -  "8083:8083"
+    restart: always
+    depends_on:
+      -  eureka-discovery-service
+    environment:
+      EUREKA_HOST: eureka-discovery-service
+    networks:
+      - truyum-network
+
+  zuul-gateway:
+    image: zuul-gateway:0.0.1-SNAPSHOT
+    ports:
+      - "8085:8085"
+    restart: always
+    depends_on:
+      -  eureka-discovery-service
+    environment:
+      EUREKA_HOST: eureka-discovery-service
+      MENU_HOST: menuitem-service
+    networks:
+      - truyum-network
+
+networks:
+  truyum-network:
